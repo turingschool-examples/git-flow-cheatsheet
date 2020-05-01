@@ -1,8 +1,148 @@
 <!DOCTYPE html>
 <head>
   <link rel="stylesheet" type="text/css" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <h1>Git Flow Cheatsheet</h1>
+    <div id="toggler">
+      <label for="expand-collapse-toggler">
+        <span id="toggle-status">Expand</span> All
+      </label>
+      <input id="expand-collapse-toggler" type="checkbox">
+    </div>
+  <main>
+    <section class="collapsed">
+      <div class="label-container">
+        <img src="./icons/angle-arrow-down.svg" class="icon">
+        <h2>Making a New Project (local)</h2>
+      </div>
+      <article>
+        <p>In the Terminal:</p>
+       <ol>
+          <li><code>mkdir</code> to create a new directory</li>
+          <li><code>cd</code> into the new directory</li>
+          <li><code>git init</code> to track files in the new directory</li>
+          <li>Add your files, make initial changes, etc</li>
+          <li><code>git add . </code> to track files with git </li>
+          <li><code>git commit -m "[your commit message]"</code> to create your initial commit</li>
+          <li>Make more changes, add the files, commit the changes, and repeat!</li>
+          
+       </ol> 
+      </article>
+    </section>
+    <section class="collapsed">
+      <div class="label-container">
+        <img src="./icons/angle-arrow-down.svg" class="icon">
+        <h2>Making a New Project (remote)</h2>
+      </div>
+      <article>
+        <ol>
+          <li>In the browser, go to <a href="github.com" target="_blank">github</a></li>
+          <li>Find the green <a href="https://github.com/new" target="_blank">new</a> button</li>
+          <li><span class="inline-img">Give your repo a name and click <img alt="Create Github Repository Button" src="./images/new-repo-btn.png"></span></li>
+          <li>Copy the SSH or HTTPS link provided in the repo</li>
+          <li>If you've already created a local project, follow the steps to add this github repo as a reomte, and push up the local code</li>
+          <li>If you have not created a local project already, you can <code>git clone [git url]</code> the new Github repo in your terminal, and begin adding files.</li>
+        </ol>
+      </article>
+    </section>
+    <section class="collapsed">
+      <div class="label-container">
+        <img src="./icons/angle-arrow-down.svg" class="icon">
+        <h2>Making Local Changes</h2>
+      </div>
+      <article> 
+        <p>After writing code in your editor, go to the terminal:</p>
+        <ol>
+          <li>Run <code>git status</code> to see what files have been changed</li>
+          <li>Run <code>git add [files to add]</code> to stage those files for a commit </li>
+          <li>Commit the changes with <code>git commit -m "[descriptive commit message]"</code></li>
+        </ol>
+      </article>
+    </section>
+    <section class="collapsed">
+      <div class="label-container">
+        <img src="./icons/angle-arrow-down.svg" class="icon">
+        <h2>Pushing Up Local Changes</h2>
+      </div>
+      <article>
+        <ol>
+          <li>In your local project directory, make sure you have a remote repository connected </li>
+          <ul>
+            <li>Run <code>git remote -v</code> to see if you have any remotes listed</li>
+            <li>If so, go to step 2<code></code></li>
+            <li>If not, grab the github url from your remote repo (or follow the steps above to create a new remote repo on github)</li>
+            <li>In your terminal, run <code>git remote add origin [github url]</code></li>
+          </ul>
+          <li>Add and commit all changes you want to push</li>
+          <li>Push the changes up to github</li>
+          <ul>
+            <li>If you've never pushed this branch up before: <code>git push -u origin [current branch name]</code></li>
+          </ul>
+          <li>If you have pushed this branch up before: <code>git push</code></li>
+        </ol>
+  
+      </article>
+    </section>
+    <section class="collapsed">
+      <div class="label-container">
+        <img src="./icons/angle-arrow-down.svg" class="icon">
+        <h2>Forking and Cloning Down a Repo</h2>
+      </div>
+      <article>
+        <ol>
+          <li>On github, find the repo you want to fork</li>
+          <li><span class="inline-img">At the top right of the page, click the <img src="./images/fork-btn.png" alt="Github Fork Button"> button</span></li>
+          <li>Copy the SSH or HTTPS github url from your newly forked repo</li>
+          <li>In the terminal, run <code> git clone [github url]</code>to clone the fork from github on to your local machine</li>
+          <li>Follow instructions above for making, committing and pushing local changes</li>
+        </ol>
+      </article>
+    </section>
+    <section class="collapsed">
+      <div class="label-container">
+        <img src="./icons/angle-arrow-down.svg" class="icon">
+        <h2>Branching</h2>
+      </div>
+      <article>
+        <p> It's a best practice to work on separate branches for different features in a project. Branches are like sandboxes for development, where you can safely make changes and try things without possibly breaking the "production-ready" pieces of code (usually the <strong>Master Branch</strong>. This is how to make and work with git branches:
+        <ol>
+          <li>In your terminal, run <code>git branch</code> to see a list of all local branches</li>
+          <li>To make a new branch, run <code>git branch [new branch name]</code></li>
+          <li>To switch to an existing branch, run <code>git checkout [branch name]</code></li>
+          <li>To create and switch to a new branch at the same time, run <code>git checkout -b [new branch name]</code></li>
+          <li>Make and commit changes to your branch</li>
+          <li>When you're ready to merge the branch into your master, push the local changes up to github (see instructions above), and make a PR (see below)</li>
+        </ol>
+      </article>
+    </section>
+    <section class="collapsed">
+      <div class="label-container">
+        <img src="./icons/angle-arrow-down.svg" class="icon">
+        <h2>Making a PR</h2>
+      </div>
+      <article>
+        <p>Once you've pushed local changes up to github, either from a branch or a fork, you'll need to make a Pull Request (PR) to get those changes encorporated into the production-ready part of the repo (this is usually the master branch) </p>
+        <ol>
+          <li>Push up your changes to github</li>
+          <li>Navigate to the repo you just pushed to</li>
+          <li>You should see a text box prompting you to "Make a Pull Request".</li>
+              <ul>
+                <li> <span class="inline-img">If not, you can click the <img src="./images/new-pr-btn.png" alt="Github New Pull Request Button" class="new-pr"> button </span></li>          
+              </ul>
+          <li>Pick which branch you want to merge, and where you want to make the merge to</li>
+          <li>Write a detailed description of your pull request, using your PR template</li>
+          <li><span class="inline-img">Tag group members to request a review, and click <img alt="Github Create Pull Request Button" src="./images/create-pr-btn.png"></span></li>
+          <li>Your group members will review the PR, then merge it to the correct branch when it's ready!</li>
+        </ol>
+      </article>
+    </section>
+  
+  </main>
+  <footer>
+      <div class="credit">Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+  </footer>
+  <script src="./index.js"></script>
 </body>
