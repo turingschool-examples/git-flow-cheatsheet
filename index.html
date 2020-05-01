@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <head>
   <link rel="stylesheet" type="text/css" href="./styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -49,8 +48,8 @@
         <h2>Making Local Changes</h2>
       </div>
       <article> 
+        <p>After writing code in your editor, go to the terminal:</p>
         <ol>
-          <p>After writing code in your editor, go to the terminal:</p>
           <li>Run <code>git status</code> to see what files have been changed</li>
           <li>Run <code>git add [files to add]</code> to stage those files for a commit </li>
           <li>Commit the changes with <code>git commit -m "[descriptive commit message]"</code></li>
@@ -90,7 +89,9 @@
         <ol>
           <li>On github, find the repo you want to fork</li>
           <li><span class="inline-img">At the top right of the page, click the <img src="./images/fork-btn.png" alt="Github Fork Button"> button</span></li>
-          <li>Follow instructions above for cloning down a repo</li>
+          <li>Copy the SSH or HTTPS github url from your newly forked repo</li>
+          <li>In the terminal, run <code> git clone [github url]</code>to clone the fork from github on to your local machine</li>
+          <li>Follow instructions above for making, committing and pushing local changes</li>
         </ol>
       </article>
     </section>
@@ -100,7 +101,15 @@
         <h2>Branching</h2>
       </div>
       <article>
-  
+        <p> It's a best practice to work on separate branches for different features in a project. Branches are like sandboxes for development, where you can safely make changes and try things without possibly breaking the "production-ready" pieces of code (usually the <strong>Master Branch</strong>. This is how to make and work with git branches:
+        <ol>
+          <li>In your terminal, run <code>git branch</code> to see a list of all local branches</li>
+          <li>To make a new branch, run <code>git branch [new branch name]</code></li>
+          <li>To switch to an existing branch, run <code>git checkout [branch name]</code></li>
+          <li>To create and switch to a new branch at the same time, run <code>git checkout -b [new branch name]</code></li>
+          <li>Make and commit changes to your branch</li>
+          <li>When you're ready to merge the branch into your master, push the local changes up to github (see instructions above), and make a PR (see below)</li>
+        </ol>
       </article>
     </section>
     <section class="collapsed">
@@ -109,6 +118,21 @@
         <h2>Making a PR</h2>
       </div>
       <article>
+        <p>Once you've pushed local changes up to github, either from a branch or a fork, you'll need to make a Pull Request (PR) to get those changes encorporated into the production-ready part of the repo (this is usually the master branch) </p>
+        <ol>
+          <li>Push up your changes to github</li>
+          <li>Navigate to the repo you just pushed to</li>
+          <li>You should see a text box prompting you to "Make a Pull Request".</li>
+              <ul>
+                <li> <span class="inline-img">If not, you can click the <img src="./images/new-pr-btn.png" alt="Github New Pull Request Button" class="new-pr"> button </span></li>          
+              </ul>
+          <li>Pick which branch you want to merge, and where you want to make the merge to</li>
+          <li>Write a detailed description of your pull request, using your PR template</li>
+          <li><span class="inline-img">Tag group members to request a review, and click <img alt="Github Create Pull Request Button" src="./images/create-pr-btn.png"></span></li>
+          <li>Your group members will review the PR, then merge it to the correct branch when it's ready!</li>
+        </ol>
+      </article>
+    </section>
   
   </main>
   <footer>

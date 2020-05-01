@@ -30,6 +30,24 @@ section {
   display: none;
 }
 
+article {
+  font: 1em "Montserrat"
+}
+
+article p {
+  margin-left: 1em;
+}
+
+
+.inline-img {
+  display: flex;
+  align-items: center;
+}
+
+.inline-img img {
+  height: 1.5em
+}
+
 .label-container {
   padding-left: 1em;
 
@@ -59,10 +77,6 @@ h2 {
   font: 1.5em "Nanum Gothic";
 }
 
-.inline-img {
-  display: flex;
-  align-items: center;
-}
 
 footer {
   text-align:right;
