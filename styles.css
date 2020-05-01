@@ -39,7 +39,7 @@ section {
   display: inline;
 }
 
-img {
+img.icon {
   height: 1em;
   width: 1em;
   z-index: -1;
@@ -57,6 +57,11 @@ img {
 
 h2 {
   font: 1.5em "Nanum Gothic";
+}
+
+.inline-img {
+  display: flex;
+  align-items: center;
 }
 
 footer {
